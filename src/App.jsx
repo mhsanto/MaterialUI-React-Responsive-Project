@@ -1,12 +1,20 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import Rightbar from "./components/Rightbar";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import { Stack } from "@mui/material";
+import Navbar from "./components/Navbar";
+
 const App = () => {
   return (
-    <div>
-      <Typography variant="h3">
-        Hello Universe.Thank You for everything you have done still now
-      </Typography>
-    </div>
+    <>
+      <Navbar />
+      <Stack direction="row" spacing={2}>
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </>
   );
 };
 
