@@ -1,6 +1,6 @@
 import React from "react";
 import { Favorite, FavoriteBorder, Share } from "@mui/icons-material";
-import Image from "../assets/me.jpg";
+
 import {
   Avatar,
   Card,
@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const Cards = () => {
+const Cards = ({ imageSource, title, name }) => {
   return (
     <Card sx={{ margin: "2rem" }}>
       <CardHeader
@@ -24,13 +24,18 @@ const Cards = () => {
           </Avatar>
         }
         action={<IconButton aria-label="settings"></IconButton>}
-        title="Mahmodul Hasan Santo"
+        title={name}
         subheader="September 14, 2021"
       />
-      <CardMedia component="img" height="20%" image={Image} alt="Paella dish" />
+      <CardMedia
+        component="img"
+        height="20%"
+        image={imageSource}
+        alt="Paella dish"
+      />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect pa the mussels, if you like.
+          {title}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
